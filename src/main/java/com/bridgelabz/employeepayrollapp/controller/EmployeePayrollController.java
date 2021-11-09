@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -38,7 +39,8 @@ public class EmployeePayrollController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO> addEmployeePayrollData(@RequestBody EmployeePayrollDTO empPayrollDTO) {
+    public ResponseEntity<ResponseDTO> addEmployeePayrollData(
+                @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
         EmployeePayrollData empData = null;
         empData = employeePayrollService.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Create Employee PayrollData:", empData);
@@ -46,7 +48,8 @@ public class EmployeePayrollController {
     }
 
     @PutMapping("/update/{empId}")
-    public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId, @RequestBody EmployeePayrollDTO empPayrollDTO) {
+    public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
+                       @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
         EmployeePayrollData empData = null;
         empData = employeePayrollService.updateEmployeePayrollData(empId, empPayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Update Employee PayrollData Successful:", empData);
