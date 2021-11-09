@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 
 public class EmployeePayrollDTO {
 
-   // @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee Name is invalid")
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee Name is invalid")
     @NotEmpty(message = "Employee Name can't be null")
     public String name;
 
