@@ -1,0 +1,9 @@
+2021-11-09 18:54:878 [INFO] [restartedMain] [c.b.e.EmployeePayrollApp:55] Starting EmployeePayrollApp using Java 16.0.2 on LAPTOP-PRASH with PID 201232 (C:\Users\impra\IdeaProjects\EmployeePayrollApp\target\classes started by impra in C:\Users\impra\IdeaProjects\EmployeePayrollApp)
+2021-11-09 18:54:880 [DEBUG] [restartedMain] [c.b.e.EmployeePayrollApp:56] Running with Spring Boot v2.4.13-SNAPSHOT, Spring v5.3.13-SNAPSHOT
+2021-11-09 18:54:880 [INFO] [restartedMain] [c.b.e.EmployeePayrollApp:668] The following profiles are active: prod
+2021-11-09 18:56:210 [WARN] [restartedMain] [c.z.h.u.DriverDataSource:70] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-11-09 18:56:903 [WARN] [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:221] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 18:57:108 [WARN] [restartedMain] [o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration:105] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-11-09 18:57:227 [INFO] [restartedMain] [c.b.e.EmployeePayrollApp:61] Started EmployeePayrollApp in 2.774 seconds (JVM running for 3.5)
+2021-11-09 18:57:229 [INFO] [restartedMain] [c.b.e.EmployeePayrollApp:15] Employee Payroll App Started in PROD Environment
+2021-11-09 18:57:230 [INFO] [restartedMain] [c.b.e.EmployeePayrollApp:17] Employee Payroll DB User is root
