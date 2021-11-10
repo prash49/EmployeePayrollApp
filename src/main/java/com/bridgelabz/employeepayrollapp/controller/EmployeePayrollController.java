@@ -31,7 +31,6 @@ public class EmployeePayrollController {
     }
 
 
-
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empId) {
         EmployeePayrollData empData = null;
@@ -42,8 +41,8 @@ public class EmployeePayrollController {
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> addEmployeePayrollData(
-                @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
-        log.debug("Employee DTO"+empPayrollDTO.toString());
+            @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
+        log.debug("Employee DTO" + empPayrollDTO.toString());
         EmployeePayrollData empData = null;
         empData = employeePayrollService.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Create Employee PayrollData:", empData);
@@ -52,7 +51,7 @@ public class EmployeePayrollController {
 
     @PutMapping("/update/{empId}")
     public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
-                       @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
+                                                                 @Valid @RequestBody EmployeePayrollDTO empPayrollDTO) {
         EmployeePayrollData empData = null;
         empData = employeePayrollService.updateEmployeePayrollData(empId, empPayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Update Employee PayrollData Successful:", empData);
@@ -66,4 +65,14 @@ public class EmployeePayrollController {
         ResponseDTO respDTO = new ResponseDTO("Deleted Successful,Deleted Id:", empId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    @GetMapping("/department/{department}")
+    public ResponseEntity<ResponseDTO> getEmployeeByDepartment(@PathVariable String department) {
+
+        List<EmployeePayrollData> employeeList = null;
+        employeeList = employeePayrollService.getEmployeesPayrollDataByDepartment(department);
+        ResponseDTO response = new ResponseDTO("Get Call for Department Successful", employeeList);
+        return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
+    }
+
 }
