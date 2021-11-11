@@ -30,17 +30,18 @@ public class EmployeePayrollData {
 
     @ElementCollection
     @CollectionTable(name = "employee_department",
-            joinColumns = @JoinColumn(name ="id"))
+            joinColumns = @JoinColumn(name = "id"))
     @Column(name = "department")
     private List<String> departments;
 
     public EmployeePayrollData() {
     }
-    public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO){
+
+    public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         this.updateEmployeePayollData(employeePayrollDTO);
     }
 
-    public void updateEmployeePayollData( EmployeePayrollDTO employeePayrollDTO) {
+    public void updateEmployeePayollData(EmployeePayrollDTO employeePayrollDTO) {
         this.name = employeePayrollDTO.name;
         this.salary = employeePayrollDTO.salary;
         this.gender = employeePayrollDTO.gender;

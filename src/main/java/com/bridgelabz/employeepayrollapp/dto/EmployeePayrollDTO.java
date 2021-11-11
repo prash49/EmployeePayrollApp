@@ -21,7 +21,7 @@ public class EmployeePayrollDTO {
 
     @JsonFormat(pattern = "dd MMM yyyy")
     @NotNull(message = "Startdate should not be empty")
-    @PastOrPresent(message = "startDate shuld be past or todays date")
+    @PastOrPresent(message = "startDate should be past or todays date")
     public LocalDate startDate;
     @NotBlank(message = "Note can not be empty")
     public String note;
