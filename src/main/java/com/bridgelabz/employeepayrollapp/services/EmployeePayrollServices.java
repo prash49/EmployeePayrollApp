@@ -79,7 +79,7 @@ public class EmployeePayrollServices implements IEmployeePayrollService {
     @Override
     public List<EmployeePayrollData> getAllEmployeePayrollData(String token) {
         Long id = tokenUtil.decodeToken(token);
-        Optional<EmployeePayrollData> empData = employeePayrollRepository.findById(Math.toIntExact(id));
+        Optional<EmployeePayrollData> empData = employeePayrollRepository.findById(Math.toIntExact((id)));
         if (empData.isPresent()) {
             List<EmployeePayrollData> employeePayrollDataList = employeePayrollRepository.findAll();
             return employeePayrollDataList;
