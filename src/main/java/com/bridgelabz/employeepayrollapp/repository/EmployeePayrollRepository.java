@@ -13,4 +13,12 @@ public interface EmployeePayrollRepository extends JpaRepository<EmployeePayroll
 
     @Query(value = "select * from employeepayroll_db where gender= :gender", nativeQuery = true)
     List<EmployeePayrollData> findEmployeesByGender(String gender);
+
+    @Query(value = "select * from employeepayroll_db where name= :name", nativeQuery = true)
+    List<EmployeePayrollData> findByNames(String name);
+
+    List<EmployeePayrollData> findByName(String name);
+
+    List<EmployeePayrollData> findByGender(String gender);
 }
+

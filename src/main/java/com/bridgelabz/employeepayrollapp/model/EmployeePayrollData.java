@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -21,8 +22,8 @@ public class EmployeePayrollData {
     private long salary;
 
     private String gender;
-
-    private LocalDate startDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date startDate = new Date(System.currentTimeMillis());
 
     private String note;
 
@@ -46,7 +47,6 @@ public class EmployeePayrollData {
         this.salary = employeePayrollDTO.salary;
         this.gender = employeePayrollDTO.gender;
         this.note = employeePayrollDTO.note;
-        this.startDate = employeePayrollDTO.startDate;
         this.profilePic = employeePayrollDTO.profilePic;
         this.departments = employeePayrollDTO.departments;
 

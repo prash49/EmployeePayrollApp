@@ -21,11 +21,12 @@ public interface IEmployeePayrollService {
 
     List<EmployeePayrollData> getEmployeesPayrollDataByGender(String gender);
 
-    String deleteallEmployeePayrollData();
 
     List<EmployeePayrollData> getAllEmployeePayrollData(String token);
 
     Optional<EmployeePayrollData> getupdateEmployeePayrollData(String token);
 
     String deleteAllEmployeePayrollData();
+
+    List<EmployeePayrollData> getEmployeesPayrollDataByName(String name);
 }
